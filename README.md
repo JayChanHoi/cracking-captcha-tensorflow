@@ -29,7 +29,7 @@ The next stage of machine learning is probably the generative machine learning m
 
 But for machine learning beginner, cracking captcha is a good project after creating models for mnist. 
 
-below is the link for RNN:
+below is the link for RCN:
 
 [RCN for mnist](https://github.com/vicariousinc/science_rcn)
 
