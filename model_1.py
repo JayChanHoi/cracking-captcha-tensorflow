@@ -45,9 +45,9 @@ def fc(flatten,i,input_size,output_size,activate,index,initializer):
 		Input = flatten_1
 	else:
 		Input = i
-	wc ,bc = f'w_{index}', f'b_{index}'
-	wc = tf.get_variable(shape = [input_size,output_size], name = f'w_{index}', initializer = initializer)
-	bc = tf.get_variable(shape = [output_size], name = f'b_{index}', initializer = initializer)
+	wc ,bc = 'w_{0}'.format(index), 'b_{0}'.format(index)
+	wc = tf.get_variable(shape = [input_size,output_size], name = 'w_{0}'.format(index), initializer = initializer)
+	bc = tf.get_variable(shape = [output_size], name = 'b_{0}'.format(index), initializer = initializer)
 	fc = tf.matmul(Input,wc) + bc
 	if activate:
 		fc = tf.nn.relu(fc)
