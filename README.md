@@ -28,6 +28,8 @@ matplotlib
 
 termcolor
 
+colorama(optional for window)(no need to install if you are using mac)
+
 tflearn
 
 # TODO
