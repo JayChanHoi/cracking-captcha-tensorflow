@@ -18,7 +18,7 @@ I run it on my own macbook pro is about 45mins for 1000 iterations. it start con
 
 
 # dependency
-python3.6
+python3
 
 tensorflow
 
