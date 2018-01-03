@@ -18,11 +18,17 @@ I run it on my own macbook pro is about 45mins for 1000 iterations. it start con
 
 
 # dependency
-<p>tensorflow</p>
-<p>numpy</p>
-<p>matplotlib</p>
-<p>termcolor</p>
-<p>tflearn</p>
+python3.6
+
+tensorflow
+
+numpy
+
+matplotlib
+
+termcolor
+
+tflearn
 
 # TODO
 The next stage of machine learning is probably the generative machine learning model.AS RCN (namely recursive cortical network) appear, it's performance for cracking captcha has defeat cnn or rnn totally. So lets study RCN!
