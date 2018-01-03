@@ -7,6 +7,14 @@ import tflearn
 import importlib
 from termcolor import colored
 import time
+from sys import platform
+
+if platform =="win32":
+	print('the operatiing system is window , import colorama')
+	from colorama import init
+	init()
+elif paltform == "darwin":
+	print('the operating system us Mac OS , no colorama is need')
 
 modle = model_1
 batch_size = 45
@@ -70,7 +78,7 @@ if __name__ == '__main__':
 				init_real_list[j] = "".join(init_real_item)
 			init_pred_vs_real.append(init_pred_list[j] + '   ,  ' + init_real_list[j])
 		init_Pred_vs_Real = "\n   ".join(init_pred_vs_real)
-		print(f'initial loss:{loss} , initial accuracy: {accu}\nPrediction VS Real:\n   {init_Pred_vs_Real}')
+		print('initial loss:{0} , initial accuracy: {1}\nPrediction VS Real:\n   {2}'.format(loss,accu,init_Pred_vs_Real))
 
 		# generate captcha for trainning
 		for i in range(iteration):
@@ -79,7 +87,7 @@ if __name__ == '__main__':
 			writer.add_summary(loss_plot,i)
 			writer.add_summary(accu_plot,i)
 			if (i+1) % 10 == 0:
-				print(f'step:{i+1} , loss:{loss} , accuracy:{accu}')
+				print('step:{0} , loss:{1} , accuracy:{2}'.format(i+1,loss,accu))
 			if (i+1) % 100 == 0:
 				pred_list = []
 				real_list = []
@@ -97,11 +105,11 @@ if __name__ == '__main__':
 						real_list[j] = "".join(real_item)
 					pred_vs_real.append(pred_list[j] + '   ,  ' + real_list[j])
 				Pred_vs_Real = "\n   ".join(pred_vs_real)
-				print(f'step:{i+1} checkpoint saved\nPrediction VS Real:\n   {Pred_vs_Real}')
+				print('step:{0} checkpoint saved\nPrediction VS Real:\n   {1}'.format(i+1,Pred_vs_Real))
 				saver.save(sess,'./captcha_model_step{0}.ckpt'.format(i+1))
 			
 		saver.save(sess,'./my_captcha_model.ckpt')
-		print(f'Total Running Time : {(time.time() - start)/3600} hrs')
+		print('Total Running Time : {0} hrs'.format((time.time() - start)/3600))
 
 
 
